@@ -1,51 +1,56 @@
 @import-normalize;
 
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-html{
-  font-family: 'Libre Franklin', sans-serif; /*300, 600, 700*/
+html {
+  font-family: "Libre Franklin", sans-serif; /*300, 600, 700*/
   font-style: normal;
 }
 
-:root{
+:root {
   --blue: hsl(223, 87%, 63%);
   --pale-blue: hsl(223, 100%, 88%);
   --light-red: hsl(354, 100%, 66%);
   --gray: hsl(0, 0%, 59%);
   --very-dark-blue: hsl(209, 33%, 12%);
-  --color-input-placeholder: #B8C5E3;
+  --color-input-placeholder: #b8c5e3;
+  --box-shadow-color: #DAE4FF;
+  --border-color: #e3e7ee; 
+  --border-color-invalid-input: #C36B77;
 }
 
-body{
+body {
   font-size: 20px;
 }
 
 /**MOBILE-FIRST**/
-.main{
-  padding: 169px 0 0 0;
+
+.main {
+  padding: 169px 0 81px 0;
   max-width: 640px;
   margin: 0 auto;
 }
 
-.logo img{
+.logo img {
   width: 106px;
   margin: 0 auto;
 }
 
-.logo img, .figure img{
+.logo img,
+.figure img {
   display: block;
   max-width: 100%;
 }
 
-.logo{
+.logo {
   margin-bottom: 80.5px;
 }
 
-.title{
+.title {
   color: var(--gray);
   font-weight: 300;
   font-style: normal;
@@ -54,30 +59,30 @@ body{
   text-align: center;
 }
 
-.title__mark{
+.title__mark {
   color: var(--very-dark-blue);
   font-weight: 700;
 }
 
-.subtitle{
+.subtitle {
   color: var(--very-dark-blue);
   font-weight: 300;
   font-style: normal;
-  font-size: 1.50rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-.header{
+.header {
   margin-bottom: 64px;
 }
 
-.form{
+.form {
   display: block;
   appearance: none;
   margin-bottom: 130px;
 }
 
-.form__group{
+.form__group {
   display: flex;
   flex-flow: column wrap;
   gap: 20px;
@@ -85,23 +90,27 @@ body{
   margin: 0 auto;
 }
 
-.input, .button{
+.input,
+.button {
   display: block;
   appearance: none;
   box-sizing: border-box;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   border-radius: 55px;
 }
 
-.input{
+.input {
   padding: 23px 0 24px 60px;
   font-weight: 300;
   border: 2px solid var(--pale-blue);
   font-size: 1.5rem;
+  width: 100%;
+  margin-bottom: 8px;
 }
 
-.input::placeholder, .input::-moz-placeholder, 
-.input::-webkit-input-placeholder{
+.input::placeholder,
+.input::-moz-placeholder,
+.input::-webkit-input-placeholder {
   font-weight: 300;
   color: var(--color-input-placeholder);
   font-style: normal;
@@ -109,39 +118,184 @@ body{
   letter-spacing: 0.5px;
 }
 
-.button{
+.button {
   background-color: var(--blue);
   border: none;
   color: white;
   font-weight: 600;
   font-size: 1.45rem;
   padding: 26px 0 26px 0;
+  box-shadow: 6px 12px 18px var(--box-shadow-color), -6px 0px 18px var(--box-shadow-color);
 }
 
-.figure{
+.figure {
   display: block;
   margin-bottom: 241px;
 }
 
-.social-media{
+.social-media {
   list-style-type: none;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  margin-bottom: 56px;
+  gap: 23px;
 }
 
-.link{
+.link {
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  border: 1px solid #e3e7ee;
+  border: 1px solid var(--border-color);
   padding: 15px;
   border-radius: 50%;
-  width: 60px;
+  width: 65px;
 }
 
-.icon{
+.icon {
   font-size: 29px;
   color: var(--blue);
+}
+
+.footer__copyright {
+  color: var(--gray);
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/*active states*/
+.button:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.link:hover{
+  background-color: var(--blue);
+  border: none;
+}
+
+.link:hover .icon{
+  color: white;
+}
+
+.warning{
+  display: block;
+  color: var(--light-red);
+  font-family: inherit;
+  font-size: 0.78rem;
+  padding: 0 0 0 30px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.input__email_invalid{
+  border-color: var(--border-color-invalid-input);
+}
+
+/**TODO: ARRUMAR WARNING FONT SIZE E MARGIN BOTTOM INPUT do mobile-first e tablet**/
+
+/*breakpoint 375px*/
+@media screen and (max-width: 375px) {
+  .input {
+    padding: 18px 0 18px 30px;
+    font-size: 1rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 18px 0 18px 0;
+  }
+}
+
+/**TODO: ARRUMAR WARNING FONT SIZE E MARGIN BOTTOM INPUT do mobile-first e tablet**/
+
+/*breakpoint 960px*/
+@media screen and (min-width: 960px) {
+  .main {
+    padding: 86px 0 50px 0;
+  }
+
+  .logo img {
+    width: auto;
+  }
+
+  .logo {
+    margin-bottom: 49px;
+  }
+
+  .title {
+    font-size: 3rem;
+    margin-bottom: 19px;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+  }
+
+  .header {
+    margin-bottom: 41px;
+  }
+
+  .form__group {
+    flex-flow: row nowrap;
+    gap: 18px;
+    max-width: none;
+    align-items: flex-start;
+  }
+
+  .form {
+    margin-bottom: 86px;
+  }
+
+  .form__group-input{
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .input {
+    padding: 18px 0px 17px 30px;
+    border-width: 1.5px;
+    font-size: 1rem;
+    /*flex: 1.6 1.6 auto;*/
+    width: 420px;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 19px 0 18px 0;
+    /*flex: 1.1 1.1 auto;*/
+    width: 200px;
+  }
+
+  .input::placeholder,
+  .input::-moz-placeholder,
+  .input::-webkit-input-placeholder {
+    letter-spacing: normal;
+  }
+
+  .figure {
+    margin-bottom: 72px;
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+
+  .link {
+    width: 18px;
+    height: 18px;
+  }
+
+  .social-media {
+    margin-bottom: 24px;
+    gap: 15px;
+  }
+
+  .footer__copyright {
+    font-size: 0.75rem;
+    text-align: center;
+  }
 }
