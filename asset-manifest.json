@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/coming-soon-page/static/css/main.88810d9f.css",
+    "main.js": "/coming-soon-page/static/js/main.8580b902.js",
+    "static/media/illustration-dashboard.png": "/coming-soon-page/static/media/illustration-dashboard.f9aaf3db81c10cfaff45.png",
+    "static/media/logo.svg": "/coming-soon-page/static/media/logo.7e09371f05c7e00fddccee34a9deac87.svg",
+    "index.html": "/coming-soon-page/index.html",
+    "main.88810d9f.css.map": "/coming-soon-page/static/css/main.88810d9f.css.map",
+    "main.8580b902.js.map": "/coming-soon-page/static/js/main.8580b902.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88810d9f.css",
+    "static/js/main.8580b902.js"
+  ]
+}
