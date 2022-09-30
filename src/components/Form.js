@@ -5,8 +5,7 @@ class Form extends React.Component{
   constructor(props) {
     super(props);
 
-    this.REGEXP_EMAIL = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-
+    this.REGEXP_EMAIL = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
     this.handleSubmitForm = this.handleSubmitForm.bind(this);
     this.handleChangeInput = this.handleChangeInput.bind(this);
 
@@ -33,6 +32,14 @@ class Form extends React.Component{
         message: "Please provide a valid email address"
       });
     }
+
+    if (this.REGEXP_EMAIL.test(this.state.email)) {
+      this.setState({
+        isValidEmail: true,
+        message: ''
+      });
+    }
+
   }
 
   handleChangeInput(event) {
@@ -42,14 +49,16 @@ class Form extends React.Component{
   render() {
     let warning, validEmail = this.state.isValidEmail;
     
-    if(!this.state.isValidEmail) {
+    if(this.state.isValidEmail) {
+      warning = "";
+    }else{
       warning = <Warning warning={this.state.message} />;
     }
 
     return (
       <form
         name="form"
-        className="form"
+        className={validEmail ? "form" : "form form_mg"}
         aria-label="Form subscribe notifications"
         onSubmit={this.handleSubmitForm}
       >
