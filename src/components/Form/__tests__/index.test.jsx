@@ -53,6 +53,20 @@ describe("Form component", () => {
         expect(sucessElement).toBeInTheDocument();
     });
 
+    it("deve mostrar mensagem de invalido quando o o valor não e email", () => {
+        render(<Form />);
+        const input = screen.getByLabelText("Your email address...");
+        fireEvent.change(input, {
+            target: {
+                value: "aaa#45612"
+            }
+        });
+        const buttonElement = screen.getByRole("button");
+        fireEvent.click(buttonElement);
+        const sucessElement = screen.queryByRole("alert");
+        expect(sucessElement.textContent).toBe("Please provide a valid email address");
+    });
+
     test("renderiza o componente Form corretamente", () => {
         render(<Form />);
         const input = screen.getByLabelText("Your email address...");
