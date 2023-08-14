@@ -7,7 +7,8 @@
 }
 
 html {
-  font-family: "Libre Franklin", sans-serif; /*300, 600, 700*/
+  font-family: "Libre Franklin", sans-serif;
+  /*300, 600, 700*/
   font-style: normal;
 }
 
@@ -82,7 +83,7 @@ body {
   margin-bottom: 130px;
 }
 
-.form_mg{
+.form_mg {
   margin-bottom: 72px;
 }
 
@@ -186,19 +187,28 @@ body {
   color: white;
 }
 
-.warning {
+.warning,
+.sucess {
   display: block;
   color: var(--light-red);
   font-family: inherit;
   font-size: 1.25rem;
-  padding: 0 0 0 110px;
+  padding: 0 0 0 60px;
   font-style: italic;
   font-weight: 600;
   margin-bottom: 28px;
 }
 
+.sucess {
+  color: green;
+}
+
 .input__email_invalid {
   border-color: var(--border-color-invalid-input);
+}
+
+.input__email {
+  border-color: greenyellow;
 }
 
 /*breakpoint 375px*/
@@ -214,11 +224,13 @@ body {
     padding: 18px 0 18px 0;
   }
 
-  .warning {
+  .warning,
+  .sucess {
     font-size: 0.8rem;
     font-weight: 300;
     padding: 0 0 0 30px;
     margin-bottom: 0;
+
   }
 }
 
@@ -274,7 +286,8 @@ body {
     margin-bottom: 8px;
   }
 
-  .warning {
+  .warning,
+  .sucess {
     font-size: 0.78rem;
     font-weight: 300;
     padding: 0 0 0 30px;
